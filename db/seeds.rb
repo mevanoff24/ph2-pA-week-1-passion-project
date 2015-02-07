@@ -1,28 +1,12 @@
-# User.create(name: "Matt", username: "mevanoff24", email: "mevanoff24@gmail.com", password: "awesome")
-# Exercise.create(name: "Squat")
-# Routine.create(sets: 3, reps: 3, weight: 330)
-# Workout.create(name: "Get Big")
+User.create(name: "Matt", username: "mevanoff24", email: "mevanoff24@gmail.com", password: "awesome")
+Routine.create(sets: 3, reps: 3, weight: 330)
+Workout.create(name: "Get Big")
 
 
-# def write_json
-#   events_json = []
-#   collection.all.each do |event|
-#     event_json = {
-#       "name" => event.name.text,
-#       "muscle_targeted" => event.muscle_targeted.text,
-#       "rating" => event.rating,
-#     }
-#     events_json << event_json
-#   end
-#   File.open("public/event.json","w") do |f|
-#     f.write(events_json.to_json)
-#   end
-# end
+require 'CSV'
 
 
-exercises = JSON.load(open("exercise.json").read)
-
-exercises["collection"].each do |key, value|
-    Exercise.create(name: value["name"])
-  end
+CSV.foreach("exercise_file/exercise_list.csv", :headers => true ) do |row|
+    Exercise.create({"name_href" => row[0], "name" => row[1], "muscle_targeted_href" => row[2], "muscle_targeted" => row[3], "rating" => row[4], "image_src" => row[5], "image_href" => row[6], "image" => row[7] })
 end
+

@@ -1,23 +1,21 @@
 
 get '/login' do
 
-
 end
 
-post '/login' do   
+post '/login' do
   user = User.find_by(username: params[:username]).try(:authenticate,
   params[:password])   # @user = User.find_by(username: params[:username])   #
   if user
-    session[:user_id] = user.id 
-    redirct '/workout'   
+    session[:user_id] = user.id
+    redirct '/workout'
   else
     redirect '/?error=Username or Password Incorrect'
-
   end
 end
 
 get '/signup' do
-  # erb :signup
+  erb :signup
 end
 
 post '/signup' do
