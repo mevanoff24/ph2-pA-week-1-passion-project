@@ -1,0 +1,9 @@
+<div>
+  <% @exercises.each do |exercise| %>
+  <% if exercise.muscle_targeted == "Abdominals" && "/exercise/abdominals" %>
+    <div><a href="/exercise/:exercise"><%= exercise.name %></a> ||
+    <%= exercise.muscle_targeted %> ||
+    <%= exercise.rating %></div>
+    <% end %>
+  <% end %>
+</div>

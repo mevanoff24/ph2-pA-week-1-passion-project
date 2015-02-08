@@ -4,7 +4,28 @@
     <input type="text" name="sets" placeholder="sets">
     <input type="text" name="reps" placeholder="reps">
     <input type="text" name="weight" placeholder="weight">
-  </form type="submit" value="CREATE">
+ <!--  </form>
+  <form action="/profile/:username" method="POST">
+    <input type="text" name="name" placeholder="exercise">
+    <input type="text" name="sets" placeholder="sets">
+    <input type="text" name="reps" placeholder="reps">
+    <input type="text" name="weight" placeholder="weight">
+  </form>
+  <form action="/profile/:username" method="POST">
+    <input type="text" name="name" placeholder="exercise">
+    <input type="text" name="sets" placeholder="sets">
+    <input type="text" name="reps" placeholder="reps">
+    <input type="text" name="weight" placeholder="weight"> -->
+    <input type="submit" value="CREATE">
+  </form>
+</div>
+
+<div>
+  <% @exercises.each do |exercise| %>
+    <div><a href="/exercise/:exercise"><%= exercise.name %></a> ||
+      Muscle Group: <%= exercise.muscle_targeted %> ||
+      Rating: <%= exercise.rating %></div>
+  <% end %>
 </div>
 
 

@@ -1,4 +1,5 @@
 get '/create' do
+  @exercises = Exercise.all
   erb :create
 end
 
