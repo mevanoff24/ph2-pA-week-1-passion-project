@@ -8,7 +8,7 @@ post '/signup' do
     session[:user_id] = user.id
     redirect '/main'
   else
-    redirect '/signup?error=Passowrds do not match'
+    redirect "/signup"
   end
 end
 

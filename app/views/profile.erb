@@ -1,14 +1,29 @@
 <p>Name: <%= @user.name %></p>
 <p>UserName: <%= @user.username %></p>
 <p>Email: <%= @user.email %></p>
-<p>: <%= @user.workouts %></p>
+<!-- <p>: <%= @user.workouts %></p> -->
 
 
 <p>Workouts</p>
+<div><% @user.workouts.each do |workout| %>
+<%= workout.name %>
+<%= workout.description %>
+<%end%></div>
+<div>
+  <% @user_workouts.routines.each do |routine| %>
+<div>Sets:<%= routine.sets %>
+Reps:<%= routine.reps %>
+Weight:<%= routine.weight %></div>
 
+<%end%>
+</div>
 
+<div><a href="/create/workout">Create New Workout</a></div>
 
-<p>Recent Workout</p>
+<div><a href="/create/routine">Create Routine</a></div>
 
-<div><a href="/create">Create New Workout</a></div>
+<div><a href="/update/routine">Update Routine</a></div>
+
+<div><a href="/delete/routine">Delete Routine</a></div>
+
 

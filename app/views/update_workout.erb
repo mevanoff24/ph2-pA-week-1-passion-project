@@ -1,5 +1,7 @@
+
 <div>
-  <form action="/create/routine" method="POST">
+  <form action="/main" method="POST">
+    <input type="hidden" name="_method" value="put">
     <input type="text" name="name" placeholder="exercise">
     <input type="text" name="sets" placeholder="sets">
     <input type="text" name="reps" placeholder="reps">
@@ -7,13 +9,3 @@
     <input type="submit" value="CREATE">
   </form>
 </div>
-
-<div>
-  <% @exercises.each do |exercise| %>
-    <div><a href="/exercise/:exercise"><%= exercise.name %></a> ||
-      Muscle Group: <%= exercise.muscle_targeted %> ||
-      Rating: <%= exercise.rating %></div>
-  <% end %>
-</div>
-
-

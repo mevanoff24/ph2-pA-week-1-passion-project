@@ -6,7 +6,7 @@ class CreateRoutines < ActiveRecord::Migration
       t.integer  :reps
       t.integer  :weight
       t.references :workout
-      t.references :exercise
+      # t.references :exercise
 
       t.timestamps
     end

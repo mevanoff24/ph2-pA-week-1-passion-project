@@ -9,7 +9,7 @@ class CreateExercises < ActiveRecord::Migration
       t.string   :image_src
       t.string   :image_href
       t.string   :image
-      t.references :routine
+      # t.references :routine
 
       t.timestamps
     end

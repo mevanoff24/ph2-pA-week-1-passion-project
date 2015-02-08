@@ -1,15 +1,32 @@
+<h1>WORKOUT IDEAS </h1>
 <div>
   <% @workouts.each do |workout| %>
-    <div><%= workout.name %></div>
+    <%workout.routines.each do |routine| %>
+      <div>WORKOUT NAME</div>
+      <div><%= routine.name%>
+      Sets:<%= routine.sets%>
+      Reps:<%= routine.reps%>
+      Weight:<%= routine.weight%>
+    </div>
+    <div>********************</div>
+    <% end %>
   <% end %>
+</div>
 
-  <% @routines.each do |routine| %>
+
+
+
+
+
+<!--   <% @routines.each do |routine| %>
     <div><%= routine.name %>
     Sets: <%= routine.sets %>
     Reps: <%= routine.reps %>
-    Weight: <%= routine.weight %></div>
+    Weight: <%= routine.weight %>
+    <a href="/profile/<%= current_user.username %>">Choose Routine</a></div>
   <% end %>
-</div>
+</div> -->
+
 
 <!-- <div>
   <% @exercises.each do |exercise| %>

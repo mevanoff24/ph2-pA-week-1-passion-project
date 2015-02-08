@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Workout</title>
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -17,6 +18,7 @@
   <% if current_user %>
     <div id="user_settings">
       <a href="/profile/<%= current_user.username %>"><%= current_user.name.capitalize %></a>
+      <a href="/main">Workout</a>
       <a href="/logout">Logout</a>
     </div>
     <% else %>
