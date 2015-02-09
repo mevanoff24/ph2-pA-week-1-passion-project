@@ -4,9 +4,9 @@ get '/create/routine' do
 end
 
 post '/create/routine' do
-  @user = User.find(session[:id])
-  @user = Routine.create(name: params[:name], sets: params[:sets], reps: params[:reps], weight: params[:weight])
-  redirect '/main'
+  @user = User.find(session[:user_id])
+  @routine = Routine.create(name: params[:name], sets: params[:sets], reps: params[:reps], weight: params[:weight], user_id: session[:user_id])
+  redirect "/main"
 end
 
 
@@ -15,10 +15,14 @@ get '/create/workout' do
 end
 
 post'/create/workout' do
-  @user = User.find(session[:id])
-  @user = Workout.create(name: params[:name], description: params[:description])
+  @user = User.find(session[:user_id])
+  @user = Workout.create(goal: params[:name], description: params[:description], user_id: session[:user_id])
   erb :create_workout
   redirect '/main'
+end
+
+get '/update' do
+  erb :update
 end
 
 get '/update/routine' do
@@ -26,18 +30,21 @@ get '/update/routine' do
 end
 
 put '/update/routine' do
-  @user = User.find(session[:id])
-  @user = Routine.update_attributes(name: params[:name], sets: params[:sets], reps: params[:reps], weight: params[:weight])
+  name = params[:name]
+  @user = User.find(session[:user_id])
+  routine = Routine.find_by(name: params[:name])
+  routine.update(name: params[:name], sets: params[:sets], reps: params[:reps], weight: params[:weight])
   redirect '/main'
 end
 
-get '/delete/routine' do
+get '/delete/workout' do
   erb :delete_workout
 end
 
-delete '/delete/routine' do
-  @user = User.find(session[:id])
-  @user.workouts.destroy
+delete '/delete/workout' do
+  # You can only have one goal
+  Workout.find_by(user_id: session[:user_id]).destroy
   redirect '/main'
 end
+
 

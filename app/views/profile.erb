@@ -1,29 +1,29 @@
-<p>Name: <%= @user.name %></p>
-<p>UserName: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
-<!-- <p>: <%= @user.workouts %></p> -->
+<div class="whole">
+  <p>Name: <%= @user.name %></p>
+  <p>UserName: <%= @user.username %></p>
+  <p>Email: <%= @user.email %></p>
 
-
-<p>Workouts</p>
-<div><% @user.workouts.each do |workout| %>
-<%= workout.name %>
-<%= workout.description %>
-<%end%></div>
-<div>
-  <% @user_workouts.routines.each do |routine| %>
-<div>Sets:<%= routine.sets %>
-Reps:<%= routine.reps %>
-Weight:<%= routine.weight %></div>
-
-<%end%>
+  <h3>Goal</h3>
+  <div><% @user.workouts.each do |workout| %>
+  <%= workout.goal %>
+  <%= workout.description %>
+  <% end %></div>
+  <h3>My Latest Routine</h3><div>
+    <% @user.routines.each do |routine| %>
+    <div><%= routine.name %> --
+      Sets: <%= routine.sets %> --
+    Reps: <%= routine.reps %> --
+    Weight: <%= routine.weight %></div>
+  <% end %>
+  </div>
 </div>
-
-<div><a href="/create/workout">Create New Workout</a></div>
-
+<div class="whole_2">
+<div><a href="/create/workout">Create New Goal</a></div>
+  <div class="clear"></div>
 <div><a href="/create/routine">Create Routine</a></div>
-
+<div class="clear"></div>
 <div><a href="/update/routine">Update Routine</a></div>
-
-<div><a href="/delete/routine">Delete Routine</a></div>
+    <div class="clear"></div>
+<div><a href="/delete/workout">Delete Goal</a></div>
 
 

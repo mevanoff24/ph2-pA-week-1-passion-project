@@ -1,54 +1,58 @@
-<h1>WORKOUT IDEAS </h1>
+<div class="whole">
+  <div>
+  <h2>GOALS </h2>
+  <% @workouts.each do |workout| %>
+      <h4><%= workout.goal %></h4>
+      <div>Description: <%= workout.description %></div>
+  <% end %>
+</div>
+
+<h2>WORKOUT IDEAS </h2>
 <div>
   <% @workouts.each do |workout| %>
-    <%workout.routines.each do |routine| %>
-      <div>WORKOUT NAME</div>
-      <div><%= routine.name%>
-      Sets:<%= routine.sets%>
-      Reps:<%= routine.reps%>
-      Weight:<%= routine.weight%>
+    <% workout.routines.each do |routine| %>
+      <div class="clear"></div>
+      <div><%= routine.name %> --
+      Sets: <%= routine.sets %> --
+      Reps: <%= routine.reps %> --
+      Weight: <%= routine.weight %>
     </div>
+    <div class="clear"></div>
     <div>********************</div>
     <% end %>
   <% end %>
 </div>
 
-
-
-
-
-
-<!--   <% @routines.each do |routine| %>
-    <div><%= routine.name %>
-    Sets: <%= routine.sets %>
-    Reps: <%= routine.reps %>
-    Weight: <%= routine.weight %>
-    <a href="/profile/<%= current_user.username %>">Choose Routine</a></div>
-  <% end %>
-</div> -->
-
-
-<!-- <div>
-  <% @exercises.each do |exercise| %>
-
-    <div><a href="/exercise/:exercise"><%= exercise.name %></a> ||
-    <%= exercise.muscle_targeted %> ||
-    <%= exercise.rating %></div>
-  <% end %>
-</div>
- -->
-<div><a href="/exercise/abdominals">Abdominals</a></div>
-<div><a href="/exercise/biceps">Biceps</a></div>
-<div><a href="/exercise/chest">Chest</a></div>
-<div><a href="/exercise/forearms">Forearms</a></div>
-<div><a href="/exercise/glutes">Glutes</a></div>
-<div><a href="/exercise/hamstrings">Hamstrings</a></div>
-<div><a href="/exercise/lats">Lats</a></div>
-<div><a href="/exercise/lowerback">Lower Back</a></div>
-<div><a href="/exercise/middleback">Middle Back</a></div>
-<div><a href="/exercise/neck">Neck</a></div>
-<div><a href="/exercise/quadriceps">Quadriceps</a></div>
-<div><a href="/exercise/shoulders">Shoulders</a></div>
-<div><a href="/exercise/traps">Traps</a></div>
-<div><a href="/exercise/triceps">Triceps</a></div>
-
+<!-- Make secondary link :exercise -->
+  <h3>Exercise List</h3>
+  <div id="exercise_links">
+    <div><a href="/exercise/all">All Exercises</a>
+    </div>
+    <div><a href="/exercise/abdominals">Abdominals</a>
+    </div>
+    <div><a href="/exercise/biceps">Biceps</a>
+    </div>
+    <div><a href="/exercise/chest">Chest</a></div>
+    <div><a href="/exercise/forearms">Forearms</a>
+    </div>
+    <div><a href="/exercise/glutes">Glutes</a>
+    </div>
+    <div><a href="/exercise/hamstrings">Hamstrings</a>
+    </div>
+    <div><a href="/exercise/lats">Lats</a>
+    </div>
+    <div><a href="/exercise/lowerback">Lower Back</a>
+    </div>
+    <div><a href="/exercise/middleback">Middle Back</a>
+    </div>
+    <div><a href="/exercise/neck">Neck</a>
+    </div>
+    <div><a href="/exercise/quadriceps">Quadriceps</a>
+    </div>
+    <div><a href="/exercise/shoulders">Shoulders</a>
+    </div>
+    <div><a href="/exercise/traps">Traps</a>
+    </div>
+    <div><a href="/exercise/triceps">Triceps</a>
+    </div>
+  </div>

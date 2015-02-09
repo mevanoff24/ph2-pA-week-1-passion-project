@@ -1,5 +1,4 @@
 get '/main' do
-  # @workouts = Workout.first.routines
   @workouts = Workout.all
   @routines = Routine.all
   @exercises = Exercise.all
@@ -11,4 +10,3 @@ post '/main' do
 end
 
 
-# Workout.first.routines

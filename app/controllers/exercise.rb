@@ -1,10 +1,4 @@
 
-
-# get '/exercise/abdominals' do
-#   @exercises = Exercise.all
-#   erb :exercise
-# end
-
 get '/exercise/abdominals' do
   @exercises = Exercise.all
   @single_exercise = Exercise.find_by(name: params[:exercise])

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :workouts
+  has_many :routines
+  # , :through => :workouts
   has_secure_password
 
   validates :name, :username, :email, :password, presence: true

@@ -8,17 +8,17 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
+
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+
+  <div id="navbar">
   <% if current_user %>
     <div id="user_settings">
-      <a href="/profile/<%= current_user.username %>"><%= current_user.name.capitalize %></a>
-      <a href="/main">Workout</a>
+      <a href="/profile/<%= current_user.username %>"><%= current_user.name.capitalize %></a>  |
+      <a href="/main">Workout</a>  |
       <a href="/logout">Logout</a>
     </div>
     <% else %>
@@ -26,5 +26,6 @@
       <a href="/signup">Sign Up</a>
     <% end %>
   <%= yield %>
+</div>
 </body>
 </html>

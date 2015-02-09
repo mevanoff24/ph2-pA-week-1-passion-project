@@ -1,3 +1,6 @@
+
+# Should make more helpers - Rule of 3
+
 helpers do
 
   def current_user
@@ -14,3 +17,6 @@ helpers do
   end
 
 end
+
+
+

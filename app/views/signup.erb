@@ -1,9 +1,13 @@
-<div>
+<div id="login">
   <div>SIGN UP </div>
   <form action="/signup" method="POST">
-  <% if params[:error] %>
-  	<p> Error: <%= params[:error] %>
-  <% end %>
+
+  	<% if @user %>
+    <% @user.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+    <% end %>
+    <% end %>
+
     <input type="text" name="user[name]" placeholder="name" value="<%= params[:name]%>">
     <input type="text" name="user[username]" placeholder="username" value="<%= params[:username]%>">
     <input type="text" name="user[email]" placeholder="email">

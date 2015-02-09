@@ -1,7 +1,7 @@
-<!-- <div>Hello World Welcome To My Awesome Website</div> -->
-
+<div id="login">
 <div>
   Begin Your Journey
+  <div class="clear"></div>
   <form action="/" method="POST">
     <% if params[:error] %>
       <p> Error: <%= params[:error] %>
@@ -11,9 +11,10 @@
     <input type="submit" value="LOG IN">
   </form>
 </div>
-
+  <div class="clear"></div>
 <div>
   <form action="/signup" method="GET">
     <input type="submit" value="SIGN UP">
   </form>
+</div>
 </div>
